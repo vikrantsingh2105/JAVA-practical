@@ -1,0 +1,24 @@
+import java.util.Scanner;
+class UserData{
+    String name;
+    int age;
+    void acceptData(Scanner sc){
+        System.out.println("Enter User Name");
+        name = sc.nextLine();
+        System.out.println("Enter Age");
+        age = sc.nextInt();
+    }
+    void displayData(){
+        System.out.println("-----User Details-----");
+        System.out.println("Name :"+name);
+        System.out.println("Age :"+age);
+    }
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        UserData s1 = new UserData();
+        s1.acceptData(sc);
+        s1.displayData();
+        sc.close();
+    }
+}
+    
