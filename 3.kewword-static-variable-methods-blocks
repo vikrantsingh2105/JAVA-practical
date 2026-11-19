@@ -1,0 +1,28 @@
+class StaticThisDemo{
+    int id;
+    static String collegeName;
+    static{
+        collegeName = "Sharda University";
+        System.out.println("Static Block: College Initialized");
+    }
+    StaticThisDemo(int id){
+        this.id = id;
+    }
+    static void changeCollege(String newCollege){
+        collegeName = newCollege;
+    }
+    void display(){
+        System.out.println("Student ID : " + this.id +",College: " +collegeName);
+    }
+    public static void main (String[]args)
+    {
+        StaticThisDemo s1 =new StaticThisDemo(101);
+        StaticThisDemo s2 =new StaticThisDemo(102);
+        s1.display();
+        s2.display();
+        StaticThisDemo.changeCollege("cse , Sharda University");
+        System.out.println("after updating static variable");
+        s1.display();
+        s2.display(); 
+    }
+}
